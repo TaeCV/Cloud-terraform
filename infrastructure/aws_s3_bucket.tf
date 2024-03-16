@@ -21,29 +21,12 @@ resource "aws_iam_policy" "wordpress-s3-policy" {
       {
         Effect = "Allow",
         Action = [
-          "s3:PutObject",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:DeleteObject",
-          "s3:GetObjectVersion",
-          "s3:PutObjectAcl"
+          "s3:*"
         ],
         Resource = [
           "${aws_s3_bucket.media_bucket.arn}",
           "${aws_s3_bucket.media_bucket.arn}/*"
         ]
-      },
-      {
-        Effect = "Allow",
-        Action = [
-          "s3:GetObjectAcl",
-          "s3:PutBucketAcl",
-          "s3:GetBucketAcl",
-          "s3:GetBucketLocation",
-          "s3:ObjectOwnerOverrideToBucketOwner",
-          "s3:PutBucketPublicAccessBlock"
-        ],
-        Resource = aws_s3_bucket.media_bucket.arn
       }
     ]
   })

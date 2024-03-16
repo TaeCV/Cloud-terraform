@@ -30,6 +30,7 @@ sudo sed -i "s/localhost/${private_ip}/" wordpress/wp-config.php
 
 sudo wget -qO /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 sudo chmod +x /usr/local/bin/wp
+sleep 60;
 until sudo -u www-data wp core install \
     --path="wordpress" \
     --url="${wordpress_public_ip}" \

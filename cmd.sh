@@ -1,6 +1,6 @@
 terraform destroy -auto-approve
-terraform plan
-terraform apply -auto-approve
+terraform plan -out plan.tfplan
+terraform apply -auto-approve plan.tfplan
 
 cat /var/log/cloud-init-output.log
 tail -50 /var/log/cloud-init-output.log

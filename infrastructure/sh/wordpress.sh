@@ -39,7 +39,7 @@ until sudo -u www-data wp core install \
     --title="Cloud" \
     --skip-email; do
         echo "Error establishing a database connection. Retrying...";
-        sleep 5;
+        sleep 10;
     done
 
 sudo wp plugin install amazon-s3-and-cloudfront --path="wordpress" --allow-root --activate

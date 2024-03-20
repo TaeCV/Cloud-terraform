@@ -1,0 +1,159 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_eip.elastic-ip-for-nat-gw (expand)" [label = "aws_eip.elastic-ip-for-nat-gw", shape = "box"]
+		"[root] aws_eip.elastic-ip-for-wordpress (expand)" [label = "aws_eip.elastic-ip-for-wordpress", shape = "box"]
+		"[root] aws_eip_association.eip_assoc (expand)" [label = "aws_eip_association.eip_assoc", shape = "box"]
+		"[root] aws_iam_access_key.wordpress-s3-user-access-key (expand)" [label = "aws_iam_access_key.wordpress-s3-user-access-key", shape = "box"]
+		"[root] aws_iam_policy.wordpress-s3-policy (expand)" [label = "aws_iam_policy.wordpress-s3-policy", shape = "box"]
+		"[root] aws_iam_user.wordpress-s3-user (expand)" [label = "aws_iam_user.wordpress-s3-user", shape = "box"]
+		"[root] aws_iam_user_policy_attachment.wordpress-s3-policy-attachment (expand)" [label = "aws_iam_user_policy_attachment.wordpress-s3-policy-attachment", shape = "box"]
+		"[root] aws_instance.Midterm-mariadb (expand)" [label = "aws_instance.Midterm-mariadb", shape = "box"]
+		"[root] aws_instance.Midterm-wordpress (expand)" [label = "aws_instance.Midterm-wordpress", shape = "box"]
+		"[root] aws_internet_gateway.midterm-igw (expand)" [label = "aws_internet_gateway.midterm-igw", shape = "box"]
+		"[root] aws_key_pair.midterm-key-pair (expand)" [label = "aws_key_pair.midterm-key-pair", shape = "box"]
+		"[root] aws_nat_gateway.nat-gw (expand)" [label = "aws_nat_gateway.nat-gw", shape = "box"]
+		"[root] aws_network_interface.db-private (expand)" [label = "aws_network_interface.db-private", shape = "box"]
+		"[root] aws_network_interface.db-private-2 (expand)" [label = "aws_network_interface.db-private-2", shape = "box"]
+		"[root] aws_network_interface.ec2-private (expand)" [label = "aws_network_interface.ec2-private", shape = "box"]
+		"[root] aws_network_interface.ec2-public (expand)" [label = "aws_network_interface.ec2-public", shape = "box"]
+		"[root] aws_route.nat-gw-route (expand)" [label = "aws_route.nat-gw-route", shape = "box"]
+		"[root] aws_route.public-internet-gw-route (expand)" [label = "aws_route.public-internet-gw-route", shape = "box"]
+		"[root] aws_route.public-internet-gw-route-2 (expand)" [label = "aws_route.public-internet-gw-route-2", shape = "box"]
+		"[root] aws_route_table.private-route-table (expand)" [label = "aws_route_table.private-route-table", shape = "box"]
+		"[root] aws_route_table.public-route-table (expand)" [label = "aws_route_table.public-route-table", shape = "box"]
+		"[root] aws_route_table.public-route-table-2 (expand)" [label = "aws_route_table.public-route-table-2", shape = "box"]
+		"[root] aws_route_table_association.private-route-table-1-association (expand)" [label = "aws_route_table_association.private-route-table-1-association", shape = "box"]
+		"[root] aws_route_table_association.public-route-table-1-association (expand)" [label = "aws_route_table_association.public-route-table-1-association", shape = "box"]
+		"[root] aws_route_table_association.public-route-table-2-association (expand)" [label = "aws_route_table_association.public-route-table-2-association", shape = "box"]
+		"[root] aws_s3_bucket.media_bucket (expand)" [label = "aws_s3_bucket.media_bucket", shape = "box"]
+		"[root] aws_s3_bucket_ownership_controls.object_ownership (expand)" [label = "aws_s3_bucket_ownership_controls.object_ownership", shape = "box"]
+		"[root] aws_s3_bucket_public_access_block.media_bucket_public_access_block (expand)" [label = "aws_s3_bucket_public_access_block.media_bucket_public_access_block", shape = "box"]
+		"[root] aws_security_group.midterm-app-external (expand)" [label = "aws_security_group.midterm-app-external", shape = "box"]
+		"[root] aws_security_group.midterm-app-internal (expand)" [label = "aws_security_group.midterm-app-internal", shape = "box"]
+		"[root] aws_security_group.midterm-mariadb-external (expand)" [label = "aws_security_group.midterm-mariadb-external", shape = "box"]
+		"[root] aws_security_group.midterm-mariadb-internal (expand)" [label = "aws_security_group.midterm-mariadb-internal", shape = "box"]
+		"[root] aws_subnet.private-subnet-1 (expand)" [label = "aws_subnet.private-subnet-1", shape = "box"]
+		"[root] aws_subnet.private-subnet-2 (expand)" [label = "aws_subnet.private-subnet-2", shape = "box"]
+		"[root] aws_subnet.public-subnet-1 (expand)" [label = "aws_subnet.public-subnet-1", shape = "box"]
+		"[root] aws_subnet.public-subnet-2 (expand)" [label = "aws_subnet.public-subnet-2", shape = "box"]
+		"[root] aws_vpc.midterm-vpc (expand)" [label = "aws_vpc.midterm-vpc", shape = "box"]
+		"[root] data.template_file.init-mariadb (expand)" [label = "data.template_file.init-mariadb", shape = "box"]
+		"[root] data.template_file.init-wordpress (expand)" [label = "data.template_file.init-wordpress", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"]" [label = "provider[\"registry.terraform.io/hashicorp/template\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"]" [label = "provider[\"registry.terraform.io/hashicorp/tls\"]", shape = "diamond"]
+		"[root] tls_private_key.midterm-private-key (expand)" [label = "tls_private_key.midterm-private-key", shape = "box"]
+		"[root] var.admin_pass" [label = "var.admin_pass", shape = "note"]
+		"[root] var.admin_user" [label = "var.admin_user", shape = "note"]
+		"[root] var.ami" [label = "var.ami", shape = "note"]
+		"[root] var.availability_zone" [label = "var.availability_zone", shape = "note"]
+		"[root] var.bucket_name" [label = "var.bucket_name", shape = "note"]
+		"[root] var.database_name" [label = "var.database_name", shape = "note"]
+		"[root] var.database_pass" [label = "var.database_pass", shape = "note"]
+		"[root] var.database_user" [label = "var.database_user", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] aws_eip.elastic-ip-for-nat-gw (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_eip.elastic-ip-for-wordpress (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_eip_association.eip_assoc (expand)" -> "[root] aws_eip.elastic-ip-for-wordpress (expand)"
+		"[root] aws_eip_association.eip_assoc (expand)" -> "[root] aws_network_interface.ec2-public (expand)"
+		"[root] aws_iam_access_key.wordpress-s3-user-access-key (expand)" -> "[root] aws_iam_user.wordpress-s3-user (expand)"
+		"[root] aws_iam_policy.wordpress-s3-policy (expand)" -> "[root] aws_s3_bucket.media_bucket (expand)"
+		"[root] aws_iam_user.wordpress-s3-user (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user_policy_attachment.wordpress-s3-policy-attachment (expand)" -> "[root] aws_iam_policy.wordpress-s3-policy (expand)"
+		"[root] aws_iam_user_policy_attachment.wordpress-s3-policy-attachment (expand)" -> "[root] aws_iam_user.wordpress-s3-user (expand)"
+		"[root] aws_instance.Midterm-mariadb (expand)" -> "[root] aws_key_pair.midterm-key-pair (expand)"
+		"[root] aws_instance.Midterm-mariadb (expand)" -> "[root] aws_network_interface.db-private (expand)"
+		"[root] aws_instance.Midterm-mariadb (expand)" -> "[root] aws_network_interface.db-private-2 (expand)"
+		"[root] aws_instance.Midterm-mariadb (expand)" -> "[root] data.template_file.init-mariadb (expand)"
+		"[root] aws_instance.Midterm-mariadb (expand)" -> "[root] var.ami"
+		"[root] aws_instance.Midterm-wordpress (expand)" -> "[root] aws_key_pair.midterm-key-pair (expand)"
+		"[root] aws_instance.Midterm-wordpress (expand)" -> "[root] aws_network_interface.ec2-private (expand)"
+		"[root] aws_instance.Midterm-wordpress (expand)" -> "[root] aws_network_interface.ec2-public (expand)"
+		"[root] aws_instance.Midterm-wordpress (expand)" -> "[root] data.template_file.init-wordpress (expand)"
+		"[root] aws_instance.Midterm-wordpress (expand)" -> "[root] var.ami"
+		"[root] aws_internet_gateway.midterm-igw (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_key_pair.midterm-key-pair (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_key_pair.midterm-key-pair (expand)" -> "[root] tls_private_key.midterm-private-key (expand)"
+		"[root] aws_nat_gateway.nat-gw (expand)" -> "[root] aws_eip.elastic-ip-for-nat-gw (expand)"
+		"[root] aws_nat_gateway.nat-gw (expand)" -> "[root] aws_subnet.public-subnet-2 (expand)"
+		"[root] aws_network_interface.db-private (expand)" -> "[root] aws_security_group.midterm-mariadb-internal (expand)"
+		"[root] aws_network_interface.db-private (expand)" -> "[root] aws_subnet.private-subnet-1 (expand)"
+		"[root] aws_network_interface.db-private-2 (expand)" -> "[root] aws_security_group.midterm-mariadb-external (expand)"
+		"[root] aws_network_interface.db-private-2 (expand)" -> "[root] aws_subnet.private-subnet-2 (expand)"
+		"[root] aws_network_interface.ec2-private (expand)" -> "[root] aws_security_group.midterm-app-internal (expand)"
+		"[root] aws_network_interface.ec2-private (expand)" -> "[root] aws_subnet.private-subnet-1 (expand)"
+		"[root] aws_network_interface.ec2-public (expand)" -> "[root] aws_security_group.midterm-app-external (expand)"
+		"[root] aws_network_interface.ec2-public (expand)" -> "[root] aws_subnet.public-subnet-1 (expand)"
+		"[root] aws_route.nat-gw-route (expand)" -> "[root] aws_nat_gateway.nat-gw (expand)"
+		"[root] aws_route.nat-gw-route (expand)" -> "[root] aws_route_table.private-route-table (expand)"
+		"[root] aws_route.public-internet-gw-route (expand)" -> "[root] aws_internet_gateway.midterm-igw (expand)"
+		"[root] aws_route.public-internet-gw-route (expand)" -> "[root] aws_route_table.public-route-table (expand)"
+		"[root] aws_route.public-internet-gw-route-2 (expand)" -> "[root] aws_internet_gateway.midterm-igw (expand)"
+		"[root] aws_route.public-internet-gw-route-2 (expand)" -> "[root] aws_route_table.public-route-table-2 (expand)"
+		"[root] aws_route_table.private-route-table (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_route_table.public-route-table (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_route_table.public-route-table-2 (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_route_table_association.private-route-table-1-association (expand)" -> "[root] aws_route_table.private-route-table (expand)"
+		"[root] aws_route_table_association.private-route-table-1-association (expand)" -> "[root] aws_subnet.private-subnet-2 (expand)"
+		"[root] aws_route_table_association.public-route-table-1-association (expand)" -> "[root] aws_route_table.public-route-table (expand)"
+		"[root] aws_route_table_association.public-route-table-1-association (expand)" -> "[root] aws_subnet.public-subnet-1 (expand)"
+		"[root] aws_route_table_association.public-route-table-2-association (expand)" -> "[root] aws_route_table.public-route-table-2 (expand)"
+		"[root] aws_route_table_association.public-route-table-2-association (expand)" -> "[root] aws_subnet.public-subnet-2 (expand)"
+		"[root] aws_s3_bucket.media_bucket (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_s3_bucket.media_bucket (expand)" -> "[root] var.bucket_name"
+		"[root] aws_s3_bucket_ownership_controls.object_ownership (expand)" -> "[root] aws_s3_bucket.media_bucket (expand)"
+		"[root] aws_s3_bucket_public_access_block.media_bucket_public_access_block (expand)" -> "[root] aws_s3_bucket.media_bucket (expand)"
+		"[root] aws_security_group.midterm-app-external (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_security_group.midterm-app-internal (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_security_group.midterm-mariadb-external (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_security_group.midterm-mariadb-internal (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_subnet.private-subnet-1 (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_subnet.private-subnet-1 (expand)" -> "[root] var.availability_zone"
+		"[root] aws_subnet.private-subnet-2 (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_subnet.private-subnet-2 (expand)" -> "[root] var.availability_zone"
+		"[root] aws_subnet.public-subnet-1 (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_subnet.public-subnet-1 (expand)" -> "[root] var.availability_zone"
+		"[root] aws_subnet.public-subnet-2 (expand)" -> "[root] aws_vpc.midterm-vpc (expand)"
+		"[root] aws_subnet.public-subnet-2 (expand)" -> "[root] var.availability_zone"
+		"[root] aws_vpc.midterm-vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.template_file.init-mariadb (expand)" -> "[root] aws_network_interface.ec2-private (expand)"
+		"[root] data.template_file.init-mariadb (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] data.template_file.init-mariadb (expand)" -> "[root] var.database_name"
+		"[root] data.template_file.init-mariadb (expand)" -> "[root] var.database_pass"
+		"[root] data.template_file.init-mariadb (expand)" -> "[root] var.database_user"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] aws_eip.elastic-ip-for-wordpress (expand)"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] aws_iam_access_key.wordpress-s3-user-access-key (expand)"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] aws_network_interface.db-private (expand)"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] aws_s3_bucket.media_bucket (expand)"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"]"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] var.admin_pass"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] var.admin_user"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] var.database_name"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] var.database_pass"
+		"[root] data.template_file.init-wordpress (expand)" -> "[root] var.database_user"
+		"[root] output.private_key_pem (expand)" -> "[root] tls_private_key.midterm-private-key (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_eip_association.eip_assoc (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_user_policy_attachment.wordpress-s3-policy-attachment (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.Midterm-mariadb (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.Midterm-wordpress (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route.nat-gw-route (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route.public-internet-gw-route (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route.public-internet-gw-route-2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.private-route-table-1-association (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.public-route-table-1-association (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.public-route-table-2-association (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_ownership_controls.object_ownership (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_public_access_block.media_bucket_public_access_block (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.init-mariadb (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)" -> "[root] data.template_file.init-wordpress (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)" -> "[root] tls_private_key.midterm-private-key (expand)"
+		"[root] root" -> "[root] output.private_key_pem (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/template\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)"
+		"[root] tls_private_key.midterm-private-key (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"]"
+	}
+}
